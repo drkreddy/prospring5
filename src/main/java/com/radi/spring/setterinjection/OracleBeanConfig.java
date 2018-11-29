@@ -1,4 +1,4 @@
-package com.radi.spring;
+package com.radi.spring.setterinjection;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.radi.spring;
+package com.radi.spring.setterinjection;
 
 public class MessageProviderImpl implements MessageProvider {
 
