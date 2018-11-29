@@ -1,4 +1,4 @@
-package com.radi.spring.setterinjection;
+package com.radi.spring.autowire;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

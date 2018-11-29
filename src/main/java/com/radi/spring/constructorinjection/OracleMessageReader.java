@@ -1,4 +1,4 @@
-package com.radi.spring.setterinjection;
+package com.radi.spring.constructorinjection;
 
 public class OracleMessageReader implements MessageReader {
     private MessageProvider messageProvider;

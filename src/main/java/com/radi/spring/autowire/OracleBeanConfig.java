@@ -1,4 +1,4 @@
-package com.radi.spring.setterinjection;
+package com.radi.spring.autowire;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ public class OracleBeanConfig {
 
     @Bean
     public MessageReader reader(){
-        OracleMessageReader reader = new OracleMessageReader(provider());
+        OracleMessageReader reader = new OracleMessageReader();
         return reader;
     }
 }
