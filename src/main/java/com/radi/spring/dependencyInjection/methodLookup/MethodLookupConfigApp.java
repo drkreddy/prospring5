@@ -16,8 +16,12 @@ public class MethodLookupConfigApp {
                 DemoBean.class);
         DemoBean standardBean = ctx.getBean("standardLookupBean",
                 DemoBean.class);
+        DemoBean singletonBean = ctx.getBean("singletonLookupBean",
+                DemoBean.class);
         displayInfo("abstractLookupBean", abstractBean);
         displayInfo("standardLookupBean", standardBean);
+        displayInfo("singletonLookupBean", singletonBean);
+
         ctx.close();
     }
     public static void displayInfo(String beanName, DemoBean bean) {

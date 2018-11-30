@@ -1,34 +1,46 @@
 ### OUTPUT
-```Nov 30, 2018 12:46:04 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
-INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d099f62: startup date [Fri Nov 30 12:46:04 IST 2018]; root of context hierarchy
-Nov 30, 2018 12:46:04 PM org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init>
-INFO: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-abstractLookupBean: Singer Instances the Same? false
-com.radi.spring.dependencyInjection.methodLookup.Singer@57d5872c
-I am sining song
-com.radi.spring.dependencyInjection.methodLookup.Singer@667a738
-I am sining song
-com.radi.spring.dependencyInjection.methodLookup.Singer@36f0f1be
-I am sining song
-com.radi.spring.dependencyInjection.methodLookup.Singer@157632c9
-I am sining song
-com.radi.spring.dependencyInjection.methodLookup.Singer@6ee12bac
-I am sining song
-100000 gets took 1 ms
-standardLookupBean: Singer Instances the Same? true
-com.radi.spring.dependencyInjection.methodLookup.Singer@400cff1a
-I am sining song
-com.radi.spring.dependencyInjection.methodLookup.Singer@400cff1a
-I am sining song
-com.radi.spring.dependencyInjection.methodLookup.Singer@400cff1a
-I am sining song
-com.radi.spring.dependencyInjection.methodLookup.Singer@400cff1a
-I am sining song
-com.radi.spring.dependencyInjection.methodLookup.Singer@400cff1a
-I am sining song
-100000 gets took 0 ms
-Nov 30, 2018 12:46:05 PM org.springframework.context.support.AbstractApplicationContext doClose
-INFO: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d099f62: startup date [Fri Nov 30 12:46:04 IST 2018]; root of context hierarchy
+```Nov 30, 2018 12:55:30 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh
+   INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d099f62: startup date [Fri Nov 30 12:55:30 IST 2018]; root of context hierarchy
+   Nov 30, 2018 12:55:30 PM org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init>
+   INFO: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+   abstractLookupBean: Singer Instances the Same? false
+   com.radi.spring.dependencyInjection.methodLookup.Singer@400cff1a
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@275710fc
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@525f1e4e
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@75f9eccc
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@52aa2946
+   I am sining song
+   100000 gets took 1 ms
+   standardLookupBean: Singer Instances the Same? true
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5d47c63f
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5d47c63f
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5d47c63f
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5d47c63f
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5d47c63f
+   I am sining song
+   100000 gets took 1 ms
+   singletonLookupBean: Singer Instances the Same? true
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5ea434c8
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5ea434c8
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5ea434c8
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5ea434c8
+   I am sining song
+   com.radi.spring.dependencyInjection.methodLookup.Singer@5ea434c8
+   I am sining song
+   100000 gets took 1 ms
+   Nov 30, 2018 12:55:30 PM org.springframework.context.support.AbstractApplicationContext doClose
+   INFO: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d099f62: startup date [Fri Nov 30 12:55:30 IST 2018]; root of context hierarchy
 ```
 
 ### Method Lookup
@@ -39,3 +51,5 @@ INFO: Closing org.springframework.context.annotation.AnnotationConfigApplication
 - If @Lookup not used bean holds reference to prototype dependent bean and as this is single ton and uses the same dependency rather than creating new dependent bean every time.
  
 - IF you examine output listed above, all the references of singer are different when Lookup is used 
+
+- Since singer has *@Scope("prototype")* , Every bean which uses will be given new instance in the example we can see singletonLookupBean and  standardLookupBean having Singer beans with different hashs'
