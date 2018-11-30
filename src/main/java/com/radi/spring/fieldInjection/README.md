@@ -18,6 +18,12 @@
  - Adds dependency on Springframework and can not be instantiated independently.
  - Difficult for tests as dependencies has to be injected manually.
 
+    #### Reading values from config
+    
+    - MessageConfig  of type @Component("messageConfig") holds the all configuration values.
+    - in MessageProviderImpl use @Value("#{messageConfig.message}") to inject values from config.
+    
+
     
     
  

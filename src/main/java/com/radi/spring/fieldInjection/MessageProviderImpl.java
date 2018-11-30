@@ -6,10 +6,13 @@ import org.springframework.stereotype.Service;
 @Service("provider")
 public class MessageProviderImpl implements MessageProvider {
 
-    @Value("Value at field message")
+    @Value("#{messageConfig.message}")
     private String message;
 
+    @Value("#{messageConfig.address}")
+    private String address;
+
     public String getMessage() {
-        return this.message;
+        return this.message+"-\n"+this.address;
     }
 }
