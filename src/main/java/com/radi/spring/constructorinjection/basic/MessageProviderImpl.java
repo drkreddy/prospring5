@@ -1,4 +1,4 @@
-package com.radi.spring.constructorinjection;
+package com.radi.spring.constructorinjection.basic;
 
 public class MessageProviderImpl implements MessageProvider {
 

@@ -1,4 +1,4 @@
-package com.radi.spring.constructorinjection;
+package com.radi.spring.constructorinjection.basic;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

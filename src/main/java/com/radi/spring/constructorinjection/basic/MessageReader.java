@@ -1,4 +1,4 @@
-package com.radi.spring.constructorinjection;
+package com.radi.spring.constructorinjection.basic;
 
 public interface MessageReader {
     public void displayMessage();

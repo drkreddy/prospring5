@@ -2,4 +2,6 @@
 a) field
 b) setter method.
 
-@Resource(name="id") can be used insted of @Autowired
+@Resource(name="id") can be used instead of @Autowired
+
+@Inject (javax.inject.Inject) is equivalent in behavior to Spring’s @Autowired annotation.
