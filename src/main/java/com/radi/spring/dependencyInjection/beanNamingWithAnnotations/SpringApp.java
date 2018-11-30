@@ -20,6 +20,12 @@ public class SpringApp {
                         + "\n aliases: "
                         + Arrays.toString(context.getAliases(b.getKey())) + "\n")
         );
+        Map<String, Singer> singerBeans = context.getBeansOfType(Singer.class);
+        singerBeans.entrySet().stream().forEach(b ->
+                System.out.println("id: " + b.getKey()
+                        + "\n aliases: "
+                        + Arrays.toString(context.getAliases(b.getKey())) + "\n")
+        );
     }
 
     @Bean(name = {"ac",
