@@ -1,4 +1,4 @@
-package com.radi.spring.applicationcontext.lifecycle.beanfactory;
+package com.radi.spring.applicationcontext.lifecycle.factorybean;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;

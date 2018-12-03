@@ -1,4 +1,4 @@
-package com.radi.spring.applicationcontext.lifecycle.beanfactory;
+package com.radi.spring.applicationcontext.lifecycle.factorybean;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;

@@ -1,4 +1,4 @@
-package com.radi.spring.applicationcontext.lifecycle.beanfactory;
+package com.radi.spring.applicationcontext.lifecycle.factorybean;
 
 import java.security.MessageDigest;
 
