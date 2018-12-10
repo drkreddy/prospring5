@@ -1,10 +1,11 @@
-package com.radi.spring.springDataJPA;
+package com.radi.spring.springJPA.springDataJpa;
 
-
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.radi.spring.springJPA.JPAConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,14 +17,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import java.util.List;
 import java.util.Properties;
 
-@Configuration
+@Configuration()
+@Import(JPAConfiguration.class)
+@ComponentScan(basePackages = "com.radi.spring.springJPA.springDataJpa")
 @EnableTransactionManagement
-@ComponentScan(basePackages = "com.radi.spring.springDataJPA")
-public class JPAConfiguration {
-
+@EnableJpaRepositories(basePackages = "com.radi.spring.springJPA.springDataJpa")
+public class SingerDemoConfig {
     @Bean
     public DataSource datasource(){
         EmbeddedDatabaseBuilder edb = new EmbeddedDatabaseBuilder();
@@ -54,7 +55,7 @@ public class JPAConfiguration {
     public EntityManagerFactory entityManagerFactory(){
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(datasource());
-        factoryBean.setPackagesToScan("com.radi.spring.springDataJPA");
+        factoryBean.setPackagesToScan("com.radi.spring.springJPA.springDataJpa");
         factoryBean.setJpaVendorAdapter(jpaVendorAdapter());
         factoryBean.setJpaProperties(hibernateProperties());
         factoryBean.afterPropertiesSet();
@@ -66,15 +67,4 @@ public class JPAConfiguration {
         return new HibernateJpaVendorAdapter();
     }
 
-
-    public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(JPAConfiguration.class);
-        DataSource datasource = (DataSource) context.getBean("datasource");
-        System.out.println(datasource);
-        SingerService singerService = context.getBean(SingerService.class);
-        List<Singer> all1 = singerService.findAll();
-        all1.forEach(x-> System.out.println(x));
-
-
-    }
 }

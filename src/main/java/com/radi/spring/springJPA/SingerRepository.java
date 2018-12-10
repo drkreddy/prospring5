@@ -1,4 +1,4 @@
-package com.radi.spring.springDataJPA;
+package com.radi.spring.springJPA;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
