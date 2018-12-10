@@ -21,4 +21,9 @@ public class JpaSingerService implements SingerService {
     public Singer findByName(String name) {
         return singerRepo.findByFirstName(name);
     }
+
+    @Override
+    public List<Singer> customFind(String pattern) {
+        return singerRepo.customFind(pattern);
+    }
 }
